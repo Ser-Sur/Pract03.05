@@ -1,0 +1,44 @@
+﻿<Window x:Class="Pract03._05.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pract03._05"
+        mc:Ignorable="d"
+        Title="Практическая работа №5" Height="515" Width="415" ResizeMode="NoResize" Icon="/ТралалелоТралала.ico">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Header="Кол-во расчитываемых пар" Grid.ColumnSpan="2"/>
+        <GroupBox Grid.Column="1" Header="Действия" Grid.Row="1" Grid.RowSpan="3"/>
+        <GroupBox Header="Система" Grid.Row="4" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="tbX1" HorizontalAlignment="Left" Margin="40,20,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="170" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbX2" HorizontalAlignment="Left" Margin="40,70,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="170" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbY1" HorizontalAlignment="Left" Margin="40,20,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="170" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbY2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="40,70,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="170" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbZ1" HorizontalAlignment="Left" Margin="40,20,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="170" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbZ2" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="40,70,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="170" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbRez1" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Left" Margin="15,10,0,0" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="40" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="tbRez2" IsReadOnly="True" Grid.Column="1" HorizontalAlignment="Left" Margin="15,0,0,10" Grid.Row="3" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Height="40" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Button x:Name="btnSumm" Click="Summ_Click" Grid.Column="1" Content="Сложить пары" Grid.Row="2" Height="40" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="15,40,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Button x:Name="btnOnePlus" Click="OnePlus_Click" Grid.Column="1" Content="+1 ко всем" Grid.Row="1" Height="40" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,40,0,0"/>
+        <Button x:Name="btnOneMimus" Click="OneMinus_Click" Grid.Column="1" Grid.RowSpan="2" Content="-1 ко всем" Grid.Row="1" Height="40" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,100,0,0"/>
+        <Button x:Name="btnInfo" Click="Info_Click" Content="О программе" HorizontalAlignment="Center" Grid.Row="4" VerticalAlignment="Top" Height="40" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,20,0,0"/>
+        <Button x:Name="btnExit" Click="Exit_Click" Grid.Column="1" Content="Выход" HorizontalAlignment="Left" Margin="15,20,0,0" Grid.Row="4" VerticalAlignment="Top" Height="40" Width="120" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <Label Content="Результат" Grid.Column="1" Grid.Row="3" Height="25" Width="70" Margin="15,-15,0,0" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rbTwoPairs" GroupName="gr1" Content="2 пары" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="165,10,0,0" Checked="rbTwoPairs_Checked"/>
+        <RadioButton x:Name="rbThreePairs" GroupName="gr1" Grid.Column="1" Content="3 пары" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,10,0,0" IsChecked="True" Checked="rbThreePairs_Checked"/>
+        <GroupBox x:Name="gbThirdPair" Header="Пара 3" Grid.Row="3"/>
+        <GroupBox Header="Пара 2" Grid.Row="2"/>
+        <GroupBox Header="Пара 1" Grid.Row="1"/>
+    </Grid>
+</Window>
