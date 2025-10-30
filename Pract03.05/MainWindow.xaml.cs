@@ -17,6 +17,11 @@ namespace Pract03._05
     /// </summary>
     public partial class MainWindow : Window
     {
+        Pair pair1 = new Pair();
+        Pair pair2 = new Pair();
+        Pair pair3 = new Pair();
+        Pair pair4 = new Pair();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -27,12 +32,9 @@ namespace Pract03._05
         {
             if (rbTwoPairs.IsChecked == true)
             {
-                if (Int32.TryParse(tbX1.Text, out int x1) == true && Int32.TryParse(tbX2.Text, out int x2) == true && Int32.TryParse(tbY1.Text, out int y1) == true && Int32.TryParse(tbY2.Text, out int y2) == true)
+                if (pair1 != null && pair2 != null)
                 {
-                    Pair pair1 = new Pair(x1, x2);
-                    Pair pair2 = new Pair(y1, y2);
-                    Pair pair3 = new Pair();
-                    pair3 = Pair.Sum(pair1, pair2);
+                    pair3 = pair1 + pair2;
                     tbRez1.Text = Convert.ToString(pair3.A);
                     tbRez2.Text = Convert.ToString(pair3.B);
                 }
@@ -40,30 +42,26 @@ namespace Pract03._05
             }
             else if (rbThreePairs.IsChecked == true)
             {
-                if (Int32.TryParse(tbX1.Text, out int x1) == true && Int32.TryParse(tbX2.Text, out int x2) == true && Int32.TryParse(tbY1.Text, out int y1) == true && Int32.TryParse(tbY2.Text, out int y2) == true && Int32.TryParse(tbZ1.Text, out int z1) == true && Int32.TryParse(tbZ2.Text, out int z2) == true)
+                if (pair1 != null && pair2 != null && pair3 != null)
                 {
-                    Pair pair1 = new Pair(x1, x2);
-                    Pair pair2 = new Pair(y1, y2);
-                    Pair pair3 = new Pair(z1, z2);
-                    Pair pair4 = new Pair();
-                    pair4 = Pair.Sum(pair1, pair2, pair3);
+                    pair4 = pair1 + pair2 + pair3;
                     tbRez1.Text = Convert.ToString(pair4.A);
                     tbRez2.Text = Convert.ToString(pair4.B);
                 }
                 else MessageBox.Show("!!!Введите удобоваримые значения!!!");
             }
+            SetPairs();
         }
 
         private void OnePlus_Click(object sender, RoutedEventArgs e)
         {
+            SetPairs();
             if (rbTwoPairs.IsChecked == true)
             {
-                if (Int32.TryParse(tbX1.Text, out int x1) == true && Int32.TryParse(tbX2.Text, out int x2) == true && Int32.TryParse(tbY1.Text, out int y1) == true && Int32.TryParse(tbY2.Text, out int y2) == true)
+                if (pair1 != null && pair2 != null)
                 {
-                    Pair pair1 = new Pair(x1, x2);
-                    Pair pair2 = new Pair(y1, y2);
-                    Pair.AddOne(ref pair1);
-                    Pair.AddOne(ref pair2);
+                    pair1++;
+                    pair2++;
                     tbX1.Text = Convert.ToString(pair1.A);
                     tbX2.Text = Convert.ToString(pair1.B);
                     tbY1.Text = Convert.ToString(pair2.A);
@@ -73,14 +71,11 @@ namespace Pract03._05
             }
             else if (rbThreePairs.IsChecked == true)
             {
-                if (Int32.TryParse(tbX1.Text, out int x1) == true && Int32.TryParse(tbX2.Text, out int x2) == true && Int32.TryParse(tbY1.Text, out int y1) == true && Int32.TryParse(tbY2.Text, out int y2) == true && Int32.TryParse(tbZ1.Text, out int z1) == true && Int32.TryParse(tbZ2.Text, out int z2) == true)
+                if (pair1 != null && pair2 != null && pair3 != null)
                 {
-                    Pair pair1 = new Pair(x1, x2);
-                    Pair pair2 = new Pair(y1, y2);
-                    Pair pair3 = new Pair(z1, z2);
-                    Pair.AddOne(ref pair1);
-                    Pair.AddOne(ref pair2);
-                    Pair.AddOne(ref pair3);
+                    pair1++;
+                    pair2++;
+                    pair3++;
                     tbX1.Text = Convert.ToString(pair1.A);
                     tbX2.Text = Convert.ToString(pair1.B);
                     tbY1.Text = Convert.ToString(pair2.A);
@@ -90,16 +85,16 @@ namespace Pract03._05
                 }
                 else MessageBox.Show("!!!Введите удобоваримые значения!!!");
             }
+            SetPairs();
         }
 
         private void OneMinus_Click(object sender, RoutedEventArgs e)
         {
+            SetPairs();
             if (rbTwoPairs.IsChecked == true)
             {
-                if (Int32.TryParse(tbX1.Text, out int x1) == true && Int32.TryParse(tbX2.Text, out int x2) == true && Int32.TryParse(tbY1.Text, out int y1) == true && Int32.TryParse(tbY2.Text, out int y2) == true)
+                if (pair1 != null && pair2 != null)
                 {
-                    Pair pair1 = new Pair(x1, x2);
-                    Pair pair2 = new Pair(y1, y2);
                     pair1--;
                     pair2--;
                     tbX1.Text = Convert.ToString(pair1.A);
@@ -111,11 +106,8 @@ namespace Pract03._05
             }
             else if (rbThreePairs.IsChecked == true)
             {
-                if (Int32.TryParse(tbX1.Text, out int x1) == true && Int32.TryParse(tbX2.Text, out int x2) == true && Int32.TryParse(tbY1.Text, out int y1) == true && Int32.TryParse(tbY2.Text, out int y2) == true && Int32.TryParse(tbZ1.Text, out int z1) == true && Int32.TryParse(tbZ2.Text, out int z2) == true)
+                if (pair1 != null && pair2 != null && pair3 != null)
                 {
-                    Pair pair1 = new Pair(x1, x2);
-                    Pair pair2 = new Pair(y1, y2);
-                    Pair pair3 = new Pair(z1, z2);
                     pair1--;
                     pair2--;
                     pair3--;
@@ -128,6 +120,7 @@ namespace Pract03._05
                 }
                 else MessageBox.Show("!!!Введите удобоваримые значения!!!");
             }
+            SetPairs();
         }
 
         private void Info_Click(object sender, RoutedEventArgs e)
@@ -150,6 +143,42 @@ namespace Pract03._05
         {
             tbZ1.IsEnabled = true;
             tbZ2.IsEnabled = true;
+        }
+
+        private void SetPairs_Click(object sender, RoutedEventArgs e)
+        {
+            SetPairs();
+        }
+
+        /// <summary>
+        /// Установить значения пар
+        /// </summary>
+        private void SetPairs()
+        {
+            if (rbTwoPairs.IsChecked == true)
+            {
+                if (Int32.TryParse(tbX1.Text, out int x1) == true && Int32.TryParse(tbX2.Text, out int x2) == true && Int32.TryParse(tbY1.Text, out int y1) == true && Int32.TryParse(tbY2.Text, out int y2) == true)
+                {
+                    pair1.A = x1;
+                    pair1.B = x2;
+                    pair2.A = y1;
+                    pair2.B = y2;
+                }
+                else MessageBox.Show("!!!Введите удобоваримые значения!!!");
+            }
+            else if (rbThreePairs.IsChecked == true)
+            {
+                if (Int32.TryParse(tbX1.Text, out int x1) == true && Int32.TryParse(tbX2.Text, out int x2) == true && Int32.TryParse(tbY1.Text, out int y1) == true && Int32.TryParse(tbY2.Text, out int y2) == true && Int32.TryParse(tbZ1.Text, out int z1) == true && Int32.TryParse(tbZ2.Text, out int z2) == true)
+                {
+                    pair1.A = x1;
+                    pair1.B = x2;
+                    pair2.A = y1;
+                    pair2.B = y2;
+                    pair3.A = z1;
+                    pair3.B = z2;
+                }
+                else MessageBox.Show("!!!Введите удобоваримые значения!!!");
+            }
         }
     }
 }
